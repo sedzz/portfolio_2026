@@ -1,20 +1,78 @@
 ---
 import BackgroundArt from "../components/BackgroundArt.astro";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Sebastian Diez | Desarrollador de Software", 
+	description = "Desarrollador de Software con más de dos años de experiencia, especializado en diseñar e implementar soluciones personalizadas para empresas, negocios y particulares." 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://sedz.dev');
+const ogImageURL = new URL('/og-image/og-image.png', Astro.site || 'https://sedz.dev');
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="author" content="Sebastian Diez" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#03060a" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Humans.txt -->
+		<link rel="author" type="text/plain" href="/humans.txt" />
+		
+		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		
+		<!-- Preconnect para fuentes -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+		
+		<!-- Preload de fuentes críticas -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:wght@300;400;500&display=swap" as="style" />
+		
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:site_name" content="Portfolio de Sebastian Diez" />
+		
+		<!-- Twitter Card -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImageURL} />
+		<meta property="twitter:creator" content="@sedzdev" />
+		
+		<!-- Generador -->
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<title>{title}</title>
 	</head>
 	<body>
-		<main class="content">
+		<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+		<main id="main-content" class="content">
 			<slot />
 		</main>
 		<BackgroundArt />
@@ -29,5 +87,37 @@ import BackgroundArt from "../components/BackgroundArt.astro";
 		width: 100vw;
 		height: 100vh;
 		background-color: #03060a;
+	}
+	
+	/* Skip navigation link for accessibility */
+	.skip-link {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background: #64ffda;
+		color: #03060a;
+		padding: 8px;
+		text-decoration: none;
+		z-index: 1000;
+		font-family: "Roboto", sans-serif;
+		font-weight: 500;
+		border-radius: 0 0 4px 0;
+	}
+	
+	.skip-link:focus {
+		top: 0;
+	}
+	
+	/* Screen reader only - hides visually but keeps accessible */
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border-width: 0;
 	}
 </style>

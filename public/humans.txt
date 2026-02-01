@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: Sebastian Diez
+Contact: sedzdev@gmail.com
+GitHub: https://github.com/sedzz
+Twitter: https://twitter.com/sedzdev
+Location: España
+
+/* SITE */
+Last update: 2026-02-01
+Language: Spanish
+Doctype: HTML5
+Framework: Astro
+
+/* TECHNOLOGIES */
+Frontend: Astro, React, TypeScript, TailwindCSS
+Backend: Node.js, FastAPI, PostgreSQL, MySQL
+Mobile: React Native, Expo
+DevOps: Docker, AWS, Linux

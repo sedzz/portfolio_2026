@@ -2,9 +2,38 @@
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
+
+const title = "Sebastian Diez | Desarrollador de Software Full Stack";
+const description = "Desarrollador de Software con más de dos años de experiencia, especializado en diseñar e implementar soluciones personalizadas para empresas, negocios y particulares. Experto en React, Next.js, TypeScript, Node.js y más.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sebastian Diez",
+  "jobTitle": "Desarrollador de Software",
+  "url": "https://sedz.dev",
+  "email": "sedzdev@gmail.com",
+  "sameAs": [
+    "https://github.com/sedzz",
+    "https://twitter.com/sedzdev"
+  ],
+  "knowsAbout": [
+    "Desarrollo Web",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Desarrollo de Software"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  }
+};
 ---
 
-<Layout>
+<Layout title={title} description={description}>
+	<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	<Main />
 	<Footer />
 </Layout>

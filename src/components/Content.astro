@@ -5,8 +5,8 @@ import projects from "../assets/projects.json";
 import contribuciones from "../assets/contributions.png";
 ---
 
-<div id="container">
-    <h2>Mis Proyectos</h2>
+<section id="container" aria-labelledby="proyectos-heading">
+    <h2 id="proyectos-heading">Mis Proyectos</h2>
     <div class="projects-grid">
         {projects.map((project) => (
             <ProjectCard
@@ -17,12 +17,12 @@ import contribuciones from "../assets/contributions.png";
                 repoUrl={project.repoUrl}
             />
         ))}
-        <div class="contributions-card">
+        <article class="contributions-card">
             <h3>+700 Contribuciones en 2025</h3>
-            <Image src={contribuciones} alt="Contribuciones de GitHub" loading="eager" />
-        </div>
+            <Image src={contribuciones} alt="Gráfico de contribuciones de GitHub de Sebastian Diez mostrando más de 700 contribuciones en 2025" loading="lazy" width={600} height={300} />
+        </article>
     </div>
-</div>
+</section>
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:wght@300;400;500&display=swap");
