@@ -9,6 +9,31 @@ interface Props {
 
 const { title, description, technologies, liveUrl, repoUrl } = Astro.props;
 const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(liveUrl).hostname}&sz=64`;
+
+const techIcons: Record<string, string> = {
+    "TypeScript": "devicon-typescript-plain",
+    "TS": "devicon-typescript-plain",
+    "JavaScript": "devicon-javascript-plain",
+    "JS": "devicon-javascript-plain",
+    "React": "devicon-react-original",
+    "React Native": "devicon-react-original",
+    "NextJS": "devicon-nextjs-plain",
+    "Next.js": "devicon-nextjs-plain",
+    "TailwindCSS": "devicon-tailwindcss-original",
+    "Tailwind": "devicon-tailwindcss-original",
+    "Node.js": "devicon-nodejs-plain",
+    "PostgreSQL": "devicon-postgresql-plain",
+    "MongoDB": "devicon-mongodb-plain",
+    "Astro": "devicon-astro-plain",
+    "Supabase": "devicon-supabase-plain",
+    "Expo": "devicon-expo-original",
+    "Drizzle": "devicon-azuresqldatabase-plain",
+    "FastAPI": "devicon-fastapi-plain",
+    "MySQL": "devicon-mysql-plain",
+    "AWS": "devicon-amazonwebservices-plain",
+    "Docker": "devicon-docker-plain",
+    "Linux": "devicon-linux-plain",
+};
 ---
 
 <div class="project-card">
@@ -19,7 +44,10 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(liveUrl)
         <p class="description">{description}</p>
         <div class="technologies">
             {technologies.map((tech) => (
-                <span class="tech-tag">{tech}</span>
+                <span class="tech-tag">
+                    {techIcons[tech] && <i class={`${techIcons[tech]} colored`}></i>}
+                    {tech}
+                </span>
             ))}
         </div>
         <div class="card-links">
@@ -29,7 +57,7 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(liveUrl)
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                Demo
+                Acceder
             </a>
             <a href={repoUrl} target="_blank" class="link-btn repo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -98,12 +126,19 @@ const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(liveUrl)
     }
 
     .tech-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
         background: rgba(100, 255, 218, 0.1);
-        color: #64ffda;
+        color: #ffffff;
         padding: 0.25rem 0.6rem;
         border-radius: 4px;
         font-size: 0.75rem;
         font-weight: 500;
+    }
+
+    .tech-tag i {
+        font-size: 1.3rem;
     }
 
     .card-links {

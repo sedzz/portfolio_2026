@@ -13,7 +13,7 @@
     "title": "Trato Motor",
     "description": "Marketplace de vehiculos usados para una empresa local.",
     "image": "/images/project2.jpg",
-    "technologies": ["NextJS", "TS", "TailwindCSS","Drizzle", "PostgreSQL"],
+    "technologies": ["NextJS", "TailwindCSS","Drizzle", "PostgreSQL", "Docker"],
     "liveUrl": "https://tratomotor.es",
     "repoUrl": "https://github.com/usuario/proyecto2"
   },
@@ -22,7 +22,7 @@
     "title": "Onrecambio",
     "description": "Marketplace B2B para la compra y venta de repuestos de vehículos.",
     "image": "/images/project3.jpg",
-    "technologies": ["Astro", "TypeScript", "Tailwind"],
+    "technologies": ["NextJS", "TypeScript", "Tailwind", "FastAPI","MySQL", "AWS", "Docker"],
     "liveUrl": "https://onrecambio.com",
     "repoUrl": "https://github.com/usuario/proyecto3"
   }
