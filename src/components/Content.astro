@@ -43,11 +43,25 @@ import contribuciones from "../assets/contributions.png";
         font-family: "Roboto", sans-serif;
     }
 
+    @media (max-width: 968px) {
+        #container {
+            padding: 8% 5%;
+            height: auto;
+        }
+    }
+
     h2 {
         color: #fff;
         font-family: "Fugaz One", cursive;
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin: 0 0 1.5rem 0;
+    }
+
+    @media (max-width: 968px) {
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
     }
 
     .projects-grid {
@@ -56,6 +70,13 @@ import contribuciones from "../assets/contributions.png";
         grid-template-rows: repeat(3, auto);
         gap: 1.5rem;
         width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
     }
 
     .contributions-card {
@@ -89,5 +110,16 @@ import contribuciones from "../assets/contributions.png";
         height: auto;
         object-fit: contain;
         border-radius: 8px;
+    }
+
+    @media (max-width: 968px) {
+        .contributions-card {
+            padding: 12px;
+        }
+
+        .contributions-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
     }
 </style>

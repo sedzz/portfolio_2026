@@ -94,7 +94,7 @@ import profileImg from "../assets/profile.jpg";
     #profile {
         position: relative;
         z-index: 1;
-        padding: 20%;
+        padding: 15%;
         background-clip: content-box;
         height: 100%;
         box-sizing: border-box;
@@ -105,6 +105,16 @@ import profileImg from "../assets/profile.jpg";
         text-align: left;
         font-family: "Roboto", sans-serif;
         border-radius: 20px;
+    }
+
+    @media (max-width: 968px) {
+        #profile {
+            padding: 8%;
+            height: auto;
+            min-height: 100vh;
+            align-items: center;
+            text-align: center;
+        }
     }
 
     .avatar {
@@ -129,7 +139,7 @@ import profileImg from "../assets/profile.jpg";
 
     h1 {
         margin: 0;
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #fff;
         font-family: "Fugaz One", cursive;
         background: linear-gradient(90deg, #a8b2d1, #64ffda, #a8b2d1) -100%/
@@ -138,6 +148,18 @@ import profileImg from "../assets/profile.jpg";
         background-clip: text;
         color: transparent;
         animation: shimmer 3s linear infinite;
+    }
+
+    @media (max-width: 968px) {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+        }
     }
 
     @keyframes shimmer {
@@ -149,10 +171,18 @@ import profileImg from "../assets/profile.jpg";
     .role {
         display: flex;
         color: #ffffff;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin: 0.5rem 0;
         font-family: "Fugaz One", cursive;
         overflow: hidden;
+    }
+
+    @media (max-width: 968px) {
+        .role {
+            font-size: 1.1rem;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .text-part {
@@ -192,10 +222,17 @@ import profileImg from "../assets/profile.jpg";
 
     .bio {
         color: #ffffff;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1.5;
         max-width: 300px;
         min-height: 3em;
+    }
+
+    @media (max-width: 968px) {
+        .bio {
+            font-size: 0.95rem;
+            max-width: 100%;
+        }
     }
 
     .bio::after {
@@ -270,6 +307,12 @@ import profileImg from "../assets/profile.jpg";
         display: flex;
         gap: 1rem;
         margin-top: 1rem;
+    }
+
+    @media (max-width: 968px) {
+        .social-links {
+            justify-content: center;
+        }
     }
 
     .social-links a {
