@@ -1,0 +1,27 @@
+
+<div>
+	<div class="parent">
+		<div class="div1">1</div>
+		<div class="div2">2</div>
+	</div>
+</div>
+
+<style>
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		gap: 8px;
+		height: 100vh;;
+	}
+
+	.div1 {
+		grid-row: span 5 / span 5;
+		background-color: aqua;
+	}
+
+	.div2 {
+		grid-row: span 5 / span 5;
+		background-color: coral;
+	}
+</style>
