@@ -1,12 +1,15 @@
 ---
 import Profile from "./Profile.astro"
+import Content from "./Content.astro"
 ---
 
 <div class="parent">
 	<div class="div1">
 		<Profile />
 	</div>
-	<div class="div2">2</div>
+	<div class="div2">
+		<Content />
+	</div>
 </div>
 
 <style>
@@ -26,6 +29,5 @@ import Profile from "./Profile.astro"
 	.div2 {
 		grid-column: span 2 / span 2;
 		grid-row: span 5 / span 5;
-		background-color: lightcoral;
 	}
 </style>
