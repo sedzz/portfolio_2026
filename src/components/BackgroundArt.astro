@@ -1,10 +1,23 @@
 
-<div
-  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 print:hidden"
-  style="mask-image: radial-gradient(circle, transparent, black); -webkit-mask-image: radial-gradient(circle, transparent, black);"
->
+<div class="background-art">
   <canvas id="artPlumCanvas" width="400" height="400"></canvas>
 </div>
+
+<style>
+  .background-art {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
+    mask-image: radial-gradient(circle, transparent, black);
+    -webkit-mask-image: radial-gradient(circle, transparent, black);
+  }
+
+  .background-art canvas {
+    background: transparent;
+  }
+</style>
 
 <script>
   const r180 = Math.PI;
