@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import ProjectCard from "./ProjectCard.astro";
 import projects from "../assets/projects.json";
 import contribuciones from "../assets/contributions.png";
@@ -18,7 +19,7 @@ import contribuciones from "../assets/contributions.png";
         ))}
         <div class="contributions-card">
             <h3>+700 Contribuciones en 2025</h3>
-            <img src={contribuciones.src} alt="Contribuciones de GitHub" />
+            <Image src={contribuciones} alt="Contribuciones de GitHub" loading="eager" />
         </div>
     </div>
 </div>
@@ -70,6 +71,7 @@ import contribuciones from "../assets/contributions.png";
         font-size: 1.3rem;
         color: #fff;
         font-family: "Fugaz One", cursive;
+        margin-bottom: 30px;
     }
 
     .contributions-card img {

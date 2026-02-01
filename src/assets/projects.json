@@ -6,16 +6,16 @@
     "image": "/images/project1.jpg",
     "technologies": ["TS", "TailwindCSS", "React Native", "Expo", "Supabase"],
     "liveUrl": "https://substrick.com",
-    "repoUrl": "https://github.com/usuario/proyecto1"
+    "repoUrl": ""
   },
   {
     "id": 2,
     "title": "Trato Motor",
-    "description": "Marketplace de vehiculos usados para una empresa local.",
+    "description": "Marketplace de vehiculos usados para una empresa local. Con dashboard administrativo, para gestionar anuncios y usuarios, leads y citas.",
     "image": "/images/project2.jpg",
     "technologies": ["NextJS", "TailwindCSS","Drizzle", "PostgreSQL", "Docker"],
     "liveUrl": "https://tratomotor.es",
-    "repoUrl": "https://github.com/usuario/proyecto2"
+    "repoUrl": ""
   },
   {
     "id": 3,
@@ -24,6 +24,6 @@
     "image": "/images/project3.jpg",
     "technologies": ["NextJS", "TypeScript", "Tailwind", "FastAPI","MySQL", "AWS", "Docker"],
     "liveUrl": "https://onrecambio.com",
-    "repoUrl": "https://github.com/usuario/proyecto3"
+    "repoUrl": ""
   }
 ]

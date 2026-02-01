@@ -1,9 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import profileImg from "../assets/profile.jpg";
 ---
 
 <div id="profile">
-    <img src={profileImg.src} alt="Foto de perfil" class="avatar" />
+    <Image
+        src={profileImg}
+        alt="Foto de perfil"
+        class="avatar"
+        width={150}
+        height={150}
+        loading="eager"
+        draggable="false"
+        oncontextmenu="return false"
+    />
     <h1>Sebastian Diez</h1>
     <div class="role">
         <span class="text-part left">Desarrollador</span>
@@ -23,6 +33,10 @@ import profileImg from "../assets/profile.jpg";
                 height="20"
                 src="https://img.icons8.com/ios-filled/FFFFFF/gmail-new.png"
                 alt="gmail-new"
+                loading="eager"
+                draggable="false"
+                oncontextmenu="return false"
+                class="no-copy"
             />
             Contactar
         </a>
@@ -90,6 +104,12 @@ import profileImg from "../assets/profile.jpg";
         border: 4px solid #a8b2d1;
         margin-bottom: 1rem;
         flex-shrink: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
     }
 
     h1 {
@@ -97,6 +117,17 @@ import profileImg from "../assets/profile.jpg";
         font-size: 3rem;
         color: #fff;
         font-family: "Fugaz One", cursive;
+        background: linear-gradient(90deg, #a8b2d1, #64ffda, #a8b2d1) -100%/ 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+        to {
+            background-position: 100%;
+        }
     }
 
     .role {
@@ -236,11 +267,24 @@ import profileImg from "../assets/profile.jpg";
         color: #64ffda;
         transform: scale(1.2);
     }
+
+    .no-copy,
+    .social-links a svg {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
+    }
+
+    .social-links a {
+        pointer-events: auto;
+    }
 </style>
 
 <script>
-    const text =
-        "Apasionado por crear soluciones tecnológicas innovadoras. Especializado en desarrollo web y aplicaciones móviles.";
+    const text = "Desarrollador de Software con más de dos años de experiencia, especializado en diseñar e implementar soluciones personalizadas para empresas, negocios y particulares; abierto a nuevas propuestas y desafíos profesionales.";
     const bioElement = document.getElementById("bio-text");
     const emailContainer = document.querySelector(".email-container");
     let index = 0;
@@ -250,7 +294,7 @@ import profileImg from "../assets/profile.jpg";
             if (index < text.length) {
                 bioElement.textContent += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 40);
+                setTimeout(typeWriter, 20);
             } else {
                 bioElement.classList.add("done");
                 emailContainer.classList.add("visible");
