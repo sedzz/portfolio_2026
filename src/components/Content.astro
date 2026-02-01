@@ -8,18 +8,26 @@ import contribuciones from "../assets/contributions.png";
 <section id="container" aria-labelledby="proyectos-heading">
     <h2 id="proyectos-heading">Mis Proyectos</h2>
     <div class="projects-grid">
-        {projects.map((project) => (
-            <ProjectCard
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                liveUrl={project.liveUrl}
-                repoUrl={project.repoUrl}
-            />
-        ))}
+        {
+            projects.map((project) => (
+                <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    technologies={project.technologies}
+                    liveUrl={project.liveUrl}
+                    repoUrl={project.repoUrl}
+                />
+            ))
+        }
         <article class="contributions-card">
             <h3>+700 Contribuciones en 2025</h3>
-            <Image src={contribuciones} alt="Gráfico de contribuciones de GitHub de Sebastian Diez mostrando más de 700 contribuciones en 2025" loading="lazy" width={600} height={300} />
+            <Image
+                src={contribuciones}
+                alt="Gráfico de contribuciones de GitHub de Sebastian Diez mostrando más de 700 contribuciones en 2025"
+                loading="lazy"
+                width={600}
+                height={300}
+            />
         </article>
     </div>
 </section>
@@ -54,7 +62,9 @@ import contribuciones from "../assets/contributions.png";
         background: rgba(255, 255, 255, 0.05);
         border-radius: 12px;
         border: 1px solid rgba(168, 178, 209, 0.1);
-        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        transition:
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
         overflow: hidden;
         display: flex;
         flex-direction: column;
