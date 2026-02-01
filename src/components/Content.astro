@@ -1,13 +1,46 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import projects from "../assets/projects.json";
+---
+
 <div id="container">
-    KLK
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+        {projects.map((project) => (
+            <ProjectCard
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                liveUrl={project.liveUrl}
+                repoUrl={project.repoUrl}
+            />
+        ))}
+    </div>
 </div>
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:wght@300;400;500&display=swap");
+
     #container {
         padding: 5%;
-        background-color: lightblue;
-        background-clip: content-box;
         height: 100%;
+        width: 100%;
         box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+    }
+
+    h2 {
+        color: #fff;
+        font-family: "Fugaz One", cursive;
+        font-size: 2rem;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1.5rem;
+        width: 100%;
     }
 </style>

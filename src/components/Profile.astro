@@ -11,14 +11,19 @@ import profileImg from "../assets/profile.jpg";
     </div>
     <p class="bio" id="bio-text"></p>
     <div class="email-container">
-        <input type="text" value="sedzdev@gmail.com" readonly class="email-input" />
-        <a href="mailto:sedzdev@gmail.com" class="contact-btn">
-        <img
-            width="20"
-            height="20"
-            src="https://img.icons8.com/ios-filled/FFFFFF/gmail-new.png"
-            alt="gmail-new"
+        <input
+            type="text"
+            value="sedzdev@gmail.com"
+            readonly
+            class="email-input"
         />
+        <a href="mailto:sedzdev@gmail.com" class="contact-btn">
+            <img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/ios-filled/FFFFFF/gmail-new.png"
+                alt="gmail-new"
+            />
             Contactar
         </a>
     </div>
@@ -165,7 +170,9 @@ import profileImg from "../assets/profile.jpg";
         border-radius: 8px;
         opacity: 0;
         transform: translateY(-10px);
-        transition: opacity 1s ease, transform 1s ease;
+        transition:
+            opacity 1s ease,
+            transform 1s ease;
     }
 
     .email-container.visible {
@@ -239,13 +246,15 @@ import profileImg from "../assets/profile.jpg";
     let index = 0;
 
     function typeWriter() {
-        if (index < text.length) {
-            bioElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 40);
-        } else {
-            bioElement.classList.add("done");
-            emailContainer.classList.add("visible");
+        if (bioElement && emailContainer) {
+            if (index < text.length) {
+                bioElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 40);
+            } else {
+                bioElement.classList.add("done");
+                emailContainer.classList.add("visible");
+            }
         }
     }
 

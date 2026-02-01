@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Substrick",
+    "description": "Aplicación móvil para gestionar tus suscripciones recurrentes y ahorrar dinero.",
+    "image": "/images/project1.jpg",
+    "technologies": ["TS", "TailwindCSS", "React Native", "Expo", "Supabase"],
+    "liveUrl": "https://substrick.com",
+    "repoUrl": "https://github.com/usuario/proyecto1"
+  },
+  {
+    "id": 2,
+    "title": "Trato Motor",
+    "description": "Marketplace de vehiculos usados para una empresa local.",
+    "image": "/images/project2.jpg",
+    "technologies": ["NextJS", "TS", "TailwindCSS","Drizzle", "PostgreSQL"],
+    "liveUrl": "https://tratomotor.es",
+    "repoUrl": "https://github.com/usuario/proyecto2"
+  },
+  {
+    "id": 3,
+    "title": "Onrecambio",
+    "description": "Marketplace B2B para la compra y venta de repuestos de vehículos.",
+    "image": "/images/project3.jpg",
+    "technologies": ["Astro", "TypeScript", "Tailwind"],
+    "liveUrl": "https://onrecambio.com",
+    "repoUrl": "https://github.com/usuario/proyecto3"
+  }
+]
