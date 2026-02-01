@@ -1,6 +1,7 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 import projects from "../assets/projects.json";
+import contribuciones from "../assets/contributions.png";
 ---
 
 <div id="container">
@@ -15,6 +16,10 @@ import projects from "../assets/projects.json";
                 repoUrl={project.repoUrl}
             />
         ))}
+        <div class="contributions-card">
+            <h3>+700 Contribuciones en 2025</h3>
+            <img src={contribuciones.src} alt="Contribuciones de GitHub" />
+        </div>
     </div>
 </div>
 
@@ -42,5 +47,35 @@ import projects from "../assets/projects.json";
         grid-template-rows: repeat(3, auto);
         gap: 1.5rem;
         width: 100%;
+    }
+
+    .contributions-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        border: 1px solid rgba(168, 178, 209, 0.1);
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .contributions-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-color: rgba(100, 255, 218, 0.3);
+    }
+
+    .contributions-card h3 {
+        margin: 0 0 0.8rem 0;
+        font-size: 1.3rem;
+        color: #fff;
+        font-family: "Fugaz One", cursive;
+    }
+
+    .contributions-card img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
     }
 </style>
